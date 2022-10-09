@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: TerrainHeightToSplatMiddle
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=18935\n291;73;1095;745;1512.297;-10.45131;1.411392;True;False\nNode;AmplifyShaderEditor.FunctionNode;16;-522.6744,373.4524;Inherit;False;TerrainHeightBlendMaskComplete;-1;;195;82b7c25a411631d4393308629ec125fc;0;4;2;FLOAT;0;False;1;FLOAT;0;False;4;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;23;-1087.392,480.8158;Inherit;False;HeightNoise;1;3;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;20;-763.6403,391.522;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;13;-804.9852,718.7734;Inherit;False;LowerBlend;1;4;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;11;-793.0541,502.5963;Inherit;False;UpperBlend;1;1;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;14;-1086.836,374.3961;Inherit;False;UpperHeight;1;0;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;12;-1086.811,605.5438;Inherit;False;LowerHeight;1;2;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;24;-761.8909,590.1794;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;-111.1514,356.6865;Inherit;False;True;-1;Splat;0;False;1;0;FLOAT;0;False;1;FLOAT;0\nWireConnection;16;2;20;0\nWireConnection;16;1;11;0\nWireConnection;16;4;24;0\nWireConnection;16;3;13;0\nWireConnection;20;0;14;0\nWireConnection;20;1;23;0\nWireConnection;24;0;23;0\nWireConnection;24;1;12;0\nWireConnection;0;0;16;0\nASEEND*/\n//CHKSM=8D2C5C950E994B253FF904FDA93617E6A87F9DB4"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_customEdited: 0
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0
+  m_url: 
