@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
 {
-    public class TerrainTextureAssigner : EditorWindow
+    public class TerrainMaterialAssigner : EditorWindow
     {
         Material SteepnessMaterial;
         Material TexturedMaterial;
@@ -13,13 +13,12 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
         [MenuItem("Tools/iffnsStuff/WorldBuildingTools/TerrainTextureAssigner")]
         public static void ShowWindow()
         {
-            GetWindow(t: typeof(TerrainTextureAssigner), utility: false, title: "Terrain texture assigner");
+            GetWindow(t: typeof(TerrainMaterialAssigner), utility: false, title: "Terrain material assigner");
         }
-
 
         void OnGUI()
         {
-            GUILayout.Label("Terrain Texture Assigner");
+            GUILayout.Label("Terrain material Assigner");
 
             GUILayout.Label("Steepness material");
             SteepnessMaterial = EditorGUILayout.ObjectField(
