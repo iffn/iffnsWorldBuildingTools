@@ -166,9 +166,13 @@ Material:
     - _Texture4:
         m_Texture: {fileID: 2800000, guid: 0cb3496584a6199428648799d2212530, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 1, y: 1}
     - _TextureSample0:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - __Clifftexture:
+        m_Texture: {fileID: 2800000, guid: 62df36f05b105a54ea5fc2526d0fc2b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:

@@ -139,8 +139,28 @@ Material:
         m_Texture: {fileID: 2800000, guid: 0cb3496584a6199428648799d2212530, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture5:
+        m_Texture: {fileID: 2800000, guid: 0cb3496584a6199428648799d2212530, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture6:
+        m_Texture: {fileID: 2800000, guid: 9ca14f4173869b444a7a92e6d295eaa4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture7:
+        m_Texture: {fileID: 2800000, guid: 6e40538a8d0200d47afeb117af441b0e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture8:
+        m_Texture: {fileID: 2800000, guid: fca5fab850ea760448ab259d7010d49d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - __Clifftexture:
+        m_Texture: {fileID: 2800000, guid: 62df36f05b105a54ea5fc2526d0fc2b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -189,7 +209,7 @@ Material:
     - _UVSec: 0
     - _UseUIAlphaClip: 0
     - _ZWrite: 1
-    - __dirty: 0
+    - __dirty: 1
     m_Colors:
     - _CliffColor: {r: 0.46274513, g: 0.46274513, b: 0.46274513, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
