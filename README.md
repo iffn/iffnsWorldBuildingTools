@@ -3,7 +3,7 @@ Made with Unity 2019.4.31f1
 A collection of multiple tools and shaders that should help with world building.
 
 Shaders:
-- Auto Texture shader for terrains and terrain meshes, which shows textures relative to height and steepness. This makes it faster to create new terrains and avoids the use of large splat maps. For terrains, 3 additional custom terrain layers can be used to draw stuff like roads. Only the Albedo channel is currently used by the shader.
+- Auto Texture shader for terrains and terrain meshes, which shows textures relative to height and steepness. This makes it faster to create new terrains and avoids the use of large splat maps. For terrains, 3 additional custom terrain layers can be used to draw stuff like roads.
 - Height hue shader to display areas of equal elevation.
 - Steepness shader to display the local steepness. The color switches at a pre-defined angle, 60° by default.
 - Map overlay shader to overlay a custom map over the terrain.
