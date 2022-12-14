@@ -13,6 +13,7 @@ Tools:
 - Terrain Material Assigner to quickly swap between differnet materials.
 - River generator to generate a river mesh using waypoints. The X-size of the waypoints defines the width at that point.
 - Terrain exporter tool to export or add the mesh from terrains. (Note: This submodule is not automatically included when downloading the zip because of GitHub being GitHub...)
+
 Note: All tools can be found in Tools -> WorldBuildingTools
 
 ![image](https://user-images.githubusercontent.com/18383974/194806904-ce20695c-c70c-4ce0-a1f4-8e93cbc5443c.png)
