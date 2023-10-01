@@ -1,0 +1,3 @@
+Photosensitivity/flashing lights warning:
+Assigning the AutoMeshTexture (or any other non-instanced terrain material) to a Unity terrain with the Draw Instanced checkbox enabled set will cause severe flickering.
+-> Use the AutoTerrainTexture materials instead
