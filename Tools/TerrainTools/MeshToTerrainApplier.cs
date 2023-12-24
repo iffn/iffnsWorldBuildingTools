@@ -1,7 +1,6 @@
 ﻿# if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
-using static VRC.SDK3.Dynamics.PhysBone.PhysBoneMigration.DynamicBoneColliderData;
 
 namespace iffnsStuff.iffnsUnityTools.TerrainTools
 {
