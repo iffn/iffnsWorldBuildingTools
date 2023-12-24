@@ -24,7 +24,7 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
         [MenuItem("Tools/iffnsStuff/WorldBuildingTools/RiverGenerator")]
         public static void ShowWindow()
         {
-            GetWindow(t: typeof(iffnsRiverGenerator), utility: false, title: "River generator");
+            GetWindow(typeof(iffnsRiverGenerator), false, "River generator");
         }
 
         void OnGUI()

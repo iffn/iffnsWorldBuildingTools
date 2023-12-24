@@ -13,7 +13,7 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
         [MenuItem("Tools/iffnsStuff/WorldBuildingTools/TerrainTextureAssigner")]
         public static void ShowWindow()
         {
-            GetWindow(t: typeof(TerrainMaterialAssigner), utility: false, title: "Terrain material assigner");
+            GetWindow(typeof(TerrainMaterialAssigner), false, "Terrain material assigner");
         }
 
         void OnGUI()
