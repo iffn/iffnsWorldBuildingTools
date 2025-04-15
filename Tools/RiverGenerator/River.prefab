@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517508198851005145}
+  - component: {fileID: 1829423448972945553}
   m_Layer: 0
   m_Name: Waypoint holder
   m_TagString: Untagged
@@ -33,6 +34,18 @@ Transform:
   - {fileID: 8781595851956048603}
   m_Father: {fileID: 1932776071404715882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1829423448972945553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825659541027120968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639ed9098e79f684f9e6db05cfaeb956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2967482639063896310
 GameObject:
   m_ObjectHideFlags: 0
