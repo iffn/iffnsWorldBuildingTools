@@ -1,85 +1,46 @@
-﻿# if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
 {
-    public class iffnsRiverGenerator : EditorWindow
+    public class River : MonoBehaviour
     {
-        MeshFilter LinkedMesh;
+        [SerializeField] Transform waypointHolder;
 
-        int NumberOfWaypoints
+        Mesh linkedMesh
         {
             get
             {
-                if (LinkedMesh == null) return 0;
-
-                if (LinkedMesh.transform.childCount == 0) return 0;
-
-                return LinkedMesh.transform.GetChild(0).childCount;
+                return transform.GetComponent<MeshFilter>().sharedMesh;
+            }
+            set
+            {
+                transform.GetComponent<MeshFilter>().sharedMesh = value;
             }
         }
 
-        [MenuItem("Tools/iffnsStuff/WorldBuildingTools/RiverGenerator")]
-        public static void ShowWindow()
+        public int NumberOfWaypoints
         {
-            GetWindow(typeof(iffnsRiverGenerator), false, "River generator");
-        }
-
-        void OnGUI()
-        {
-            GUILayout.Label("iffns River Generator");
-
-            LinkedMesh = EditorGUILayout.ObjectField(
-               obj: LinkedMesh,
-               objType: typeof(MeshFilter),
-               true) as MeshFilter;
-
-            if (!LinkedMesh)
+            get
             {
-                if (GUILayout.Button("Instantiate river template"))
-                {
-                    InstantiateRiverHolder();
-                }
-            }
-            else if (NumberOfWaypoints < 2)
-            {
-                GUILayout.Label("Please add more waypoints to the river. (Children of first child)");
-            }
-            else
-            {
-                if (GUILayout.Button("Update river mesh"))
-                {
-                    GenerateRiver();
-                }
+                if (waypointHolder == null) return 0;
+
+                return waypointHolder.childCount;
             }
         }
 
-        void InstantiateRiverHolder()
+        public void MakeMeshUniqueAndUpdate()
         {
-            GameObject newRiver = new GameObject("River");
+            linkedMesh = new Mesh();
 
-            LinkedMesh = newRiver.AddComponent<MeshFilter>();
-            newRiver.AddComponent<MeshRenderer>();
-
-            GameObject holder = new GameObject("Waypoint holder");
-            holder.transform.parent = newRiver.transform;
-
-            GameObject waypoint0 = new GameObject("Waypoint 0");
-            waypoint0.transform.parent = holder.transform;
-
-            GameObject waypoint1 = new GameObject("Waypoint 1");
-            waypoint1.transform.parent = holder.transform;
-            waypoint1.transform.position = Vector3.forward;
+            UpdateRiverMesh();
         }
 
-        void GenerateRiver()
+        public void UpdateRiverMesh()
         {
-            if (LinkedMesh.sharedMesh == null)
-            {
-                LinkedMesh.sharedMesh = new Mesh();
-            }
+            if(linkedMesh == null)
+                linkedMesh = new Mesh();
 
             //Reserve values
             int waypointCount = NumberOfWaypoints;
@@ -88,11 +49,7 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
             Vector2[] UVs = new Vector2[waypointCount * 2];
             int[] triangles = new int[(waypointCount - 1) * 6];
 
-            Transform linkedMeshTransform = LinkedMesh.transform;
-            Transform waypointHolder = linkedMeshTransform.GetChild(0);
-
             Transform[] waypoints = new Transform[waypointCount];
-
 
             for (int i = 0; i < waypointCount; i++)
             {
@@ -109,8 +66,8 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
 
             float halfWidth = waypoints[0].localScale.x * 0.5f;
 
-            vertices[0] = linkedMeshTransform.InverseTransformPoint(helper.position - halfWidth * helper.right);
-            vertices[1] = linkedMeshTransform.InverseTransformPoint(helper.position + halfWidth * helper.right);
+            vertices[0] = transform.InverseTransformPoint(helper.position - halfWidth * helper.right);
+            vertices[1] = transform.InverseTransformPoint(helper.position + halfWidth * helper.right);
             UVs[0] = new Vector2(-halfWidth, 0);
             UVs[1] = new Vector2(halfWidth, 0);
 
@@ -132,8 +89,8 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
 
                 halfWidth = waypoints[waypoint].localScale.x * 0.5f;
 
-                vertices[waypoint * 2 + 0] = linkedMeshTransform.InverseTransformPoint(helper.position - halfWidth * helper.right);
-                vertices[waypoint * 2 + 1] = linkedMeshTransform.InverseTransformPoint(helper.position + halfWidth * helper.right);
+                vertices[waypoint * 2 + 0] = transform.InverseTransformPoint(helper.position - halfWidth * helper.right);
+                vertices[waypoint * 2 + 1] = transform.InverseTransformPoint(helper.position + halfWidth * helper.right);
 
                 currentPosition += (currentWaypoint.position - prevWaypoint.position).magnitude * currentWaypoint.localScale.z;
 
@@ -155,8 +112,8 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
 
             halfWidth = currenWaypoint.localScale.x * 0.5f;
 
-            vertices[lastWaypointIndex * 2 + 0] = linkedMeshTransform.InverseTransformPoint(helper.position - halfWidth * helper.right);
-            vertices[lastWaypointIndex * 2 + 1] = linkedMeshTransform.InverseTransformPoint(helper.position + halfWidth * helper.right);
+            vertices[lastWaypointIndex * 2 + 0] = transform.InverseTransformPoint(helper.position - halfWidth * helper.right);
+            vertices[lastWaypointIndex * 2 + 1] = transform.InverseTransformPoint(helper.position + halfWidth * helper.right);
 
             currentPosition += (currenWaypoint.position - prevWaypoint.position).magnitude * currenWaypoint.localScale.z;
 
@@ -181,17 +138,17 @@ namespace iffnsStuff.iffnsUnityTools.WorldBuildingTools
             }
 
             //Assign values
-            Mesh mesh = LinkedMesh.sharedMesh;
+            linkedMesh.Clear();
 
-            mesh.vertices = vertices;
-            mesh.triangles = triangles;
-            mesh.uv = UVs;
+            linkedMesh.vertices = vertices;
+            linkedMesh.triangles = triangles;
+            linkedMesh.uv = UVs;
 
-            mesh.RecalculateBounds();
-            mesh.RecalculateNormals();
-            mesh.RecalculateTangents();
+            linkedMesh.RecalculateBounds();
+            linkedMesh.RecalculateNormals();
+            linkedMesh.RecalculateTangents();
         }
     }
 }
-#endif
+
 
