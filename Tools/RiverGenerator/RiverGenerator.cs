@@ -1,5 +1,4 @@
 ﻿# if UNITY_EDITOR
-using iffnsStuff.MarchingCubeEditor.Core;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
